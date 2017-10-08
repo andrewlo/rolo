@@ -1,6 +1,11 @@
 <p>
-  <strong>Name:</strong>
-  <%= @guest.name %>
+  <strong>First Name:</strong>
+  <%= @guest.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @guest.last_name %>
 </p>
 
 <p>
@@ -11,6 +16,16 @@
 <p>
   <strong>Attending:</strong>
   <%= @guest.attending %>
+</p>
+
+<p>
+  <strong>Dietary Restrictions:</strong>
+  <%= @guest.dietary_restrictions %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @guest.comments %>
 </p>
 
 <%= link_to 'Back', guests_path %>
