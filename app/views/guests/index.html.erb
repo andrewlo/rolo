@@ -5,16 +5,22 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>First Name</th>
+    <th>Last Name</th>
     <th>Email</th>
     <th>Attending</th>
+    <th>Dietary Restrictions</th>
+    <th>Comments</th>
   </tr>
 
   <% @guests.each do |guest| %>
     <tr>
-      <td><%= guest.name %></td>
+      <td><%= guest.first_name %></td>
+      <td><%= guest.last_name %></td>
       <td><%= guest.email %></td>
       <td><%= guest.attending %></td>
+      <td><%= guest.dietary_restrictions %></td>
+      <td><%= guest.comments %></td>
       <td><%= link_to 'Show', guest_path(guest) %></td>
       <td><%= link_to 'Edit', edit_guest_path(guest) %></td>
       <td><%= link_to 'Remove', guest_path(guest),
