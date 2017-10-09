@@ -42,6 +42,13 @@ class GuestsController < ApplicationController
     redirect_to guests_path
   end
 
+  def invite
+    @guest = Guest.find(params[:id])
+    GuestMailer.invite_email(@guest).deliver_now
+
+    redirect_to guests_path
+  end
+
 private
   def guest_params
     params.require(:guest).permit(:first_name, :last_name, :email, :attending, :dietary_restrictions, :comments)
