@@ -49,6 +49,21 @@ class GuestsController < ApplicationController
     redirect_to guests_path
   end
 
+  def rsvp
+    @guest = Guest.find(params[:id])
+  end
+
+  def rsvp_update
+    @guest = Guest.find(params[:id])
+
+    if @guest.update(guest_params)
+      flash[:notice] = "RSVP successful"
+      redirect_to rsvp_guest_path(@guest)
+    else
+      render 'rsvp'
+    end
+  end
+
 private
   def guest_params
     params.require(:guest).permit(:first_name, :last_name, :email, :attending, :dietary_restrictions, :comments)

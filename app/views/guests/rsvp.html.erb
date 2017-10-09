@@ -1,0 +1,26 @@
+<h1>RSVP</h1>
+
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
+
+<%= form_for @guest, url: rsvp_update_guest_path(@guest), method: :post, local: true do |form| %>
+  <%= render 'form_errors' %>
+
+  <p>
+    <%= form.label :attending %><br>
+    <%= form.check_box :attending %>
+  </p>
+  <p>
+    <%= form.label :dietary_restrictions %><br>
+    <%= form.text_field :dietary_restrictions %>
+  </p>
+  <p>
+    <%= form.label :comments %><br>
+    <%= form.text_field :comments %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
