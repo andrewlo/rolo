@@ -26,6 +26,8 @@
       <td><%= link_to 'Remove', guest_path(guest),
               method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Send invite', invite_guest_path(guest),
+              method: :post %></td>
     </tr>
   <% end %>
 </table>

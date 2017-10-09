@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :guests
+  resources :guests do
+    post 'invite', on: :member
+  end
 
   root 'guests#index'
 
