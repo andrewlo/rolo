@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :guests do
     post 'invite', on: :member
+    get 'rsvp', on: :member
+    post 'rsvp_update', on: :member
   end
 
   root 'guests#index'
